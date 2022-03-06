@@ -30,7 +30,12 @@ public class SimpleCalculatorApp {
             }
             case 4 -> {
                 numbers = userInput.getDivisionNumbers();
+                try {
                     return simpleCalculator.divide(numbers[0], numbers[1]);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                    return 0;
+                }
             }
             default -> {
                 System.err.println("Something went wrong");
